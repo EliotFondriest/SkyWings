@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contactez Aviation Passion pour poser vos questions, demander des informations ou partager vos suggestions.">
+<title>Aviation Passion - Contact</title>
+<style>
+:root {
+    --main-color:#1ABC9C;
+    --dark-color:#148F77;
+    --bg-light:#E8F8F5;
+    --text-dark:#1C2833;
+    --text-light:#FFFFFF;
+}
+
+body{ font-family:Arial,sans-serif; margin:0; padding:0; background-color:var(--bg-light); color:var(--text-dark); line-height:1.8; }
+
+header{ background:linear-gradient(135deg,var(--main-color),var(--dark-color)); color:var(--text-light); padding:80px 20px; text-align:center; }
+header h1{ font-size:3.5rem; margin-bottom:20px; }
+header p{ font-size:1.3rem; max-width:900px; margin:auto; }
+
+nav{ background-color:#0E6655; text-align:center; padding:15px 0; position:sticky; top:0; z-index:100; }
+nav a{ color:white; padding:15px 25px; text-decoration:none; font-weight:bold; display:inline-block; transition:0.3s; }
+nav a:hover{ background-color:var(--main-color); border-radius:6px; }
+
+section{ max-width:1000px; margin:auto; padding:60px 20px; }
+h2{ font-size:2.5rem; color:var(--dark-color); margin-bottom:30px; text-align:center; }
+p{ font-size:1.1rem; margin-bottom:20px; }
+
+.contact-form{ background:white; padding:30px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.1); }
+.contact-form label{ display:block; margin-bottom:5px; font-weight:bold; }
+.contact-form input, .contact-form textarea{ width:100%; padding:12px; margin-bottom:20px; border-radius:10px; border:1px solid #ccc; font-size:1rem; }
+.contact-form textarea{ resize:vertical; min-height:150px; }
+.contact-form button{ background:var(--main-color); color:white; padding:15px 25px; border:none; border-radius:10px; cursor:pointer; font-size:1rem; transition:0.3s; }
+.contact-form button:hover{ background:var(--dark-color); }
+
+.contact-info{ margin-top:40px; display:flex; flex-wrap:wrap; gap:30px; justify-content:center; }
+.info-card{ background:white; border-radius:15px; padding:20px; width:300px; box-shadow:0 10px 25px rgba(0,0,0,0.1); text-align:center; }
+.info-card h4{ color:var(--main-color); margin-bottom:15px; }
+
+footer{ background-color:#0E6655; color:white; text-align:center; padding:25px 0; margin-top:80px; }
+
+@media(max-width:800px){ .info-card{ width:100%; max-width:300px; } header h1{ font-size:2.5rem; } header p{ font-size:1rem; } }
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Contactez Aviation Passion</h1>
+<p>Vous avez une question, une suggestion ou souhaitez en savoir plus ? Remplissez le formulaire ci-dessous et nous vous répondrons rapidement !</p>
+</header>
+
+<nav>
+<a href="index.html">Accueil</a>
+<a href="gallery.html">Galerie</a>
+<a href="history.html">Histoire</a>
+<a href="info.html">Informations</a>
+<a href="pilots.html">Pilotes</a>
+<a href="airlines.html">Compagnies Aeriennes</a>
+<a href="airports.html">Aeroports</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<section>
+<h2>Formulaire de Contact</h2>
+
+<form class="contact-form" id="contactForm" onsubmit="return handleSubmit(event)">
+    <label for="name">Nom complet</label>
+    <input type="text" id="name" name="name" placeholder="Votre nom complet" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Votre email" required>
+
+    <label for="subject">Sujet</label>
+    <input type="text" id="subject" name="subject" placeholder="Sujet de votre message" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Écrivez votre message ici..." required></textarea>
+
+    <button type="submit">Envoyer le message</button>
+</form>
+
+<div class="contact-info">
+    <div class="info-card">
+        <h4>Email</h4>
+        <p>contact@aviationpassion.com</p>
+    </div>
+    <div class="info-card">
+        <h4>Téléphone</h4>
+        <p>+33 6 69 68 30 22</p>
+    </div>
+    <div class="info-card">
+        <h4>Adresse</h4>
+        <p>123 Rue de l’Aviation, 75000 Paris, France</p>
+    </div>
+</div>
+</section>
+
+<footer>
+<p>&copy; 2026 Aviation Passion | Tous droits réservés</p>
+</footer>
+
+<script>
+// Validation simple et simulation d'envoi
+function handleSubmit(event){
+    event.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if(!name || !email || !subject || !message){
+        alert("Merci de remplir tous les champs.");
+        return false;
+    }
+
+    // Ici vous pourriez envoyer les données via AJAX / backend
+    alert("Merci " + name + ", votre message a bien été envoyé !");
+    document.getElementById('contactForm').reset();
+    return false;
+}
+</script>
+
+</body>
+</html>

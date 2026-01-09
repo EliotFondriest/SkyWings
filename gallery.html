@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Galerie d'images d'avions historiques, modernes et futuristes avec descriptions détaillées et caractéristiques techniques.">
+<title>Aviation Passion - Galerie</title>
+
+<style>
+:root {
+    --main-color:#1ABC9C;
+    --dark-color:#148F77;
+    --bg-light:#E8F8F5;
+    --text-dark:#1C2833;
+    --text-light:#FFFFFF;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    background-color:var(--bg-light);
+    color:var(--text-dark);
+    line-height:1.7;
+}
+
+header{
+    background: linear-gradient(135deg,var(--main-color),var(--dark-color));
+    color:white;
+    padding:80px 20px;
+    text-align:center;
+}
+header h1{ font-size:3.5rem; margin-bottom:20px; }
+header p{ font-size:1.3rem; max-width:900px; margin:auto; }
+
+nav{
+    background-color:#0E6655;
+    text-align:center;
+    padding:15px 0;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+nav a{
+    color:white;
+    padding:15px 25px;
+    text-decoration:none;
+    font-weight:bold;
+    display:inline-block;
+    transition:0.3s;
+}
+nav a:hover{ background-color:var(--main-color); border-radius:6px; }
+
+section{ max-width:1400px; margin:auto; padding:60px 20px; }
+h2{ font-size:2.5rem; color:var(--dark-color); margin-bottom:30px; text-align:center; }
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.gallery-item{
+    position:relative;
+    overflow:hidden;
+    border-radius:15px;
+    cursor:pointer;
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-item:hover{
+    transform:scale(1.05);
+    box-shadow:0 20px 40px rgba(0,0,0,0.25);
+}
+.gallery-item img{
+    width:100%;
+    display:block;
+    border-radius:15px;
+}
+
+/* Fenêtre modale */
+.modal{
+    display:none;
+    position:fixed;
+    z-index:1000;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.85);
+    justify-content:center;
+    align-items:center;
+}
+.modal-content{
+    background:white;
+    border-radius:15px;
+    max-width:90%;
+    max-height:90%;
+    padding:25px;
+    text-align:center;
+    overflow:auto;
+    position:relative;
+}
+.modal img{
+    width:100%;
+    max-height:500px;
+    border-radius:10px;
+    object-fit:cover;
+}
+.modal h3{ margin-top:20px; color:var(--main-color); font-size:2rem; }
+.modal p{ margin:10px 0; font-size:1.1rem; color:var(--text-dark); }
+.close{
+    position:absolute;
+    top:10px;
+    right:20px;
+    font-size:30px;
+    font-weight:bold;
+    color:#333;
+    cursor:pointer;
+}
+.close:hover{ color:var(--main-color); }
+
+footer{
+    background-color:#0E6655;
+    color:white;
+    text-align:center;
+    padding:25px 0;
+    margin-top:80px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Galerie d'Avions</h1>
+<p>Explorez notre collection d’avions historiques, modernes et futuristes. Cliquez sur chaque photo pour découvrir ses caractéristiques, anecdotes et performances uniques !</p>
+</header>
+
+<nav>
+<a href="index.html">Accueil</a>
+<a href="gallery.html">Galerie</a>
+<a href="history.html">Histoire</a>
+<a href="info.html">Informations</a>
+<a href="pilots.html">Pilotes</a>
+<a href="airlines.html">Compagnies Aeriennes</a>
+<a href="airports.html">Aeroports</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<section>
+<h2>Nos avions emblématiques</h2>
+
+<div class="gallery-grid">
+    <div class="gallery-item" onclick="openModal('A350')">
+        <img src="A350.jpg" alt="Airbus A350">
+    </div>
+    <div class="gallery-item" onclick="openModal('B777X')">
+        <img src="B777X.jpg" alt="Boeing 777X">
+    </div>
+    <div class="gallery-item" onclick="openModal('Concorde')">
+        <img src="Concorde.jpg" alt="Concorde">
+    </div>
+    <div class="gallery-item" onclick="openModal('F35')">
+        <img src="F35.jpg" alt="F-35 Lightning II">
+    </div>
+    <div class="gallery-item" onclick="openModal('An225')">
+        <img src="An225.jpg" alt="Antonov An-225">
+    </div>
+    <div class="gallery-item" onclick="openModal('F22')">
+        <img src="F22raptor.jpg" alt="F-22 Raptor">
+    </div>
+    <div class="gallery-item" onclick="openModal('747')">
+        <img src="B747.jpg" alt="Boeing 747">
+    </div>
+    <div class="gallery-item" onclick="openModal('Spitfire')">
+        <img src="Spitfire.jpg" alt="Supermarine Spitfire">
+    </div>
+    <div class="gallery-item" onclick="openModal('Dreamliner')">
+        <img src="B787.jpg" alt="Boeing 787 Dreamliner">
+    </div>
+    <!-- 10 avions supplémentaires -->
+    <div class="gallery-item" onclick="openModal('A380')">
+        <img src="A380.jpg" alt="Airbus A380">
+    </div>
+    <div class="gallery-item" onclick="openModal('C17')">
+        <img src="C17.jpg" alt="Boeing C-17 Globemaster">
+    </div>
+    <div class="gallery-item" onclick="openModal('SR71')">
+        <img src="SR71.jpg" alt="Lockheed SR-71 Blackbird">
+    </div>
+    <div class="gallery-item" onclick="openModal('MiG29')">
+        <img src="MiG29.jpg" alt="MiG-29 Fulcrum">
+    </div>
+    <div class="gallery-item" onclick="openModal('Su57')">
+        <img src="Su57.jpg" alt="Sukhoi Su-57">
+    </div>
+    <div class="gallery-item" onclick="openModal('E195')">
+        <img src="E195.jpg" alt="Embraer E195">
+    </div>
+    <div class="gallery-item" onclick="openModal('H145')">
+        <img src="H145.jpg" alt="Airbus H145">
+    </div>
+    <div class="gallery-item" onclick="openModal('C130')">
+        <img src="C130.jpg" alt="Lockheed C-130 Hercules">
+    </div>
+    <div class="gallery-item" onclick="openModal('F16')">
+        <img src="F16.jpg" alt="F-16 Fighting Falcon">
+    </div>
+    <div class="gallery-item" onclick="openModal('Typhoon')">
+        <img src="Typhoon.jpg" alt="Eurofighter Typhoon">
+    </div>
+</div>
+
+<!-- Fenêtre modale -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="Image agrandie">
+        <h3 id="modalTitle"></h3>
+        <p id="modalYear"></p>
+        <p id="modalDescription"></p>
+    </div>
+</div>
+</section>
+
+<footer>
+<p>&copy; 2026 Aviation Passion | Tous droits réservés</p>
+</footer>
+
+<script>
+const aircraftData = {
+    'A350': { 
+        img:'A350.jpg', 
+        title:'Airbus A350', 
+        year:'2015 - présent', 
+        description:'Le Airbus A350 est un avion long-courrier moderne conçu pour optimiser le confort des passagers et l’efficacité énergétique. Il utilise des matériaux composites légers et résistants, ses moteurs Rolls-Royce Trent XWB sont parmi les plus silencieux et économes au monde. Sa cabine est spacieuse, avec des systèmes de pressurisation et humidité avancés, offrant moins de fatigue sur les vols longs. Il peut voler jusqu’à 15 000 km sans escale et dispose d’un rayon d’action impressionnant. Sa conception aérodynamique permet de réduire les turbulences et la consommation de carburant, faisant de lui l’un des avions les plus performants de sa catégorie.' 
+    },
+    'B777X': { 
+        img:'B777X.jpg', 
+        title:'Boeing 777X', 
+        year:'2025 - futur', 
+        description:'Le Boeing 777X est la dernière génération du 777. Ses ailes sont équipées de volets repliables uniques pour améliorer l’efficacité tout en restant compatible avec les aéroports existants. Les moteurs GE9X offrent une puissance et une consommation réduite exceptionnelles. Il peut transporter 395 à 426 passagers selon la version et couvrir des distances intercontinentales extrêmement longues. La cabine s’inspire du 787 Dreamliner, avec éclairage LED, systèmes de divertissement avancés et confort acoustique supérieur.' 
+    },
+    'Concorde': { 
+        img:'Concorde.jpg', 
+        title:'Concorde', 
+        year:'1976 - 2003', 
+        description:'Le Concorde était un avion supersonique emblématique capable de voler à Mach 2. Il réalisait des traversées transatlantiques en moins de 3 heures, une vitesse sans précédent pour l’époque. Son design élancé, ses moteurs Rolls-Royce/Snecma Olympus, son nez basculant et ses ailes delta étaient révolutionnaires. Symbole de luxe et de prestige, il transportait principalement des passagers fortunés et célébrités. Sa vitesse et son style ont marqué l’histoire de l’aviation civile.' 
+    },
+    'F35': { 
+        img:'F35.jpg', 
+        title:'F-35 Lightning II', 
+        year:'2015 - présent', 
+        description:'Le F-35 Lightning II est un avion de combat furtif multi-rôle. Il combine vitesse, furtivité, capacités de bombardement et supériorité aérienne. Ses systèmes avioniques avancés permettent une conscience situationnelle exceptionnelle. Il est utilisé par de nombreuses forces aériennes dans le monde, offrant un avantage stratégique grâce à sa capacité de décollage vertical sur certaines versions, sa propulsion avancée et son armement polyvalent.' 
+    },
+    'An225': { 
+        img:'An225.jpg', 
+        title:'Antonov An-225 Mriya', 
+        year:'1988 - présent', 
+        description:'L’Antonov An-225 est le plus gros avion cargo du monde. Conçu initialement pour transporter la navette spatiale soviétique, il possède six moteurs et une capacité de charge record de 250 tonnes. Il peut transporter des cargaisons exceptionnelles, comme des turbines ou des avions entiers, et voler sur de longues distances. Sa taille et son envergure en font une icône de l’ingénierie aéronautique.' 
+    },
+    'F22': { 
+        img:'F22raptor.jpg', 
+        title:'F-22 Raptor', 
+        year:'2005 - présent', 
+        description:'Chasseur furtif de supériorité aérienne, le F-22 Raptor combine vitesse supersonique, manœuvrabilité extrême et technologies furtives avancées. Équipé de moteurs à post-combustion et de systèmes de détection radar sophistiqués, il peut engager des cibles à longue distance tout en restant invisible pour l’ennemi. C’est l’un des chasseurs les plus avancés au monde et un symbole de puissance aérienne.' 
+    },
+    '747': { 
+        img:'B747.jpg', 
+        title:'Boeing 747', 
+        year:'1969 - présent', 
+        description:'Le Boeing 747, surnommé Jumbo Jet, a révolutionné le transport aérien. Avec sa double cabine et sa capacité à transporter plus de 400 passagers, il a permis les vols long-courriers de masse. Ses quatre moteurs et son design emblématique à bosse en font un symbole mondial de l’aviation commerciale. Il reste utilisé par certaines compagnies et comme avion cargo pour ses performances exceptionnelles.' 
+    },
+    'Spitfire': { 
+        img:'Spitfire.jpg', 
+        title:'Supermarine Spitfire', 
+        year:'1938 - 1950', 
+        description:'Le Spitfire est un avion de chasse iconique de la Seconde Guerre mondiale. Conçu pour la Royal Air Force, il est reconnu pour sa maniabilité exceptionnelle, sa vitesse et son moteur Merlin puissant. Il a joué un rôle crucial lors de la bataille d’Angleterre et reste une référence en matière de design aéronautique militaire historique.' 
+    },
+    'Dreamliner': { 
+        img:'B787.jpg', 
+        title:'Boeing 787 Dreamliner', 
+        year:'2011 - présent', 
+        description:'Le Dreamliner est un avion long-courrier moderne conçu pour l’efficacité énergétique et le confort. Ses matériaux composites réduisent le poids, ses moteurs économes diminuent la consommation de carburant et son système d’humidification avancé améliore le confort des passagers. Sa cabine spacieuse et silencieuse fait du 787 un avion privilégié pour les vols intercontinentaux.' 
+    },
+    'A380': { 
+        img:'A380.jpg', 
+        title:'Airbus A380', 
+        year:'2005 - présent', 
+        description:'Le Airbus A380 est le plus grand avion de passagers du monde. Avec deux ponts complets et une capacité pouvant dépasser 850 passagers, il permet de relier les grandes villes avec un confort inégalé. Ses quatre moteurs Rolls-Royce ou Engine Alliance GP7200 offrent une puissance phénoménale et une fiabilité remarquable. Il a révolutionné l’aviation commerciale moderne et reste un symbole de prestige.' 
+    },
+    'C17': { 
+        img:'C17.jpg', 
+        title:'Boeing C-17 Globemaster', 
+        year:'1991 - présent', 
+        description:'Avion de transport militaire stratégique, le C-17 permet de transporter troupes, véhicules et matériel lourd sur de longues distances. Il peut opérer sur des pistes courtes ou non préparées, et ses systèmes avioniques avancés garantissent une sécurité maximale lors de missions humanitaires ou militaires.' 
+    },
+    'SR71': { 
+        img:'SR71.jpg', 
+        title:'Lockheed SR-71 Blackbird', 
+        year:'1966 - 1998', 
+        description:'Le SR-71 est un avion de reconnaissance stratégique capable de voler à plus de Mach 3. Sa vitesse et son altitude lui permettaient d’échapper aux missiles ennemis. Avec un design furtif avancé et des matériaux résistant à la chaleur extrême, il reste l’avion le plus rapide de l’histoire.' 
+    },
+    'MiG29': { 
+        img:'MiG29.jpg', 
+        title:'MiG-29 Fulcrum', 
+        year:'1983 - présent', 
+        description:'Le MiG-29 est un chasseur polyvalent développé par l’Union soviétique. Réputé pour sa maniabilité exceptionnelle et sa puissance moteur, il peut engager des cibles aériennes et terrestres avec une grande efficacité. Il reste une référence en aviation militaire, même face aux jets de génération moderne.' 
+    },
+    'Su57': { 
+        img:'Su57.jpg', 
+        title:'Sukhoi Su-57', 
+        year:'2010 - présent', 
+        description:'Le Su-57 est un chasseur furtif russe de 5ème génération. Il combine vitesse supersonique, furtivité et avionique avancée. Sa conception permet des manœuvres aériennes extrêmes et l’emport d’armement sophistiqué pour missions stratégiques et tactiques. Il représente l’expertise russe en aéronautique militaire moderne.' 
+    },
+    'E195': { 
+        img:'E195.jpg', 
+        title:'Embraer E195', 
+        year:'2006 - présent', 
+        description:'Le E195 est un avion régional brésilien, conçu pour le transport de passagers sur de courtes à moyennes distances. Efficace, confortable et économique, il permet aux compagnies aériennes de relier efficacement des villes secondaires. Son cockpit moderne et ses moteurs fiables en font un avion très apprécié.' 
+    },
+    'H145': { 
+        img:'H145.jpg', 
+        title:'Airbus H145', 
+        year:'2009 - présent', 
+        description:'Hélicoptère polyvalent léger, le H145 est utilisé pour le secours, le transport médical et les missions militaires. Il combine performance, fiabilité et technologies avancées comme la cabine totalement numérique et un système de rotor optimisé pour le confort et la sécurité.' 
+    },
+    'C130': { 
+        img:'C130.jpg', 
+        title:'Lockheed C-130 Hercules', 
+        year:'1956 - présent', 
+        description:'Le C-130 Hercules est un avion de transport militaire robuste. Il peut décoller et atterrir sur des pistes courtes, transporter de lourdes charges, et est utilisé pour les missions humanitaires, cargo et opérations spéciales. Sa longévité témoigne de son efficacité et de sa fiabilité.' 
+    },
+    'F16': { 
+        img:'F16.jpg', 
+        title:'F-16 Fighting Falcon', 
+        year:'1978 - présent', 
+        description:'Le F-16 est un chasseur polyvalent américain, léger et rapide. Il peut effectuer des missions de supériorité aérienne, attaque au sol et reconnaissance. Son agilité, son avionique avancée et sa fiabilité en font l’un des chasseurs les plus utilisés au monde.' 
+    },
+    'Typhoon': { 
+        img:'Typhoon.jpg', 
+        title:'Eurofighter Typhoon', 
+        year:'2003 - présent', 
+        description:'Chasseur européen de 4ème génération, le Typhoon combine vitesse, maniabilité et technologies de pointe. Il est capable d’opérations air-air et air-sol, et intègre des systèmes avioniques sophistiqués pour garantir la supériorité aérienne et la sécurité des missions.' 
+    }
+};
+
+  
+function openModal(id){
+    const data = aircraftData[id];
+    const modal = document.getElementById('modal');
+    document.getElementById('modalImage').src = data.img;
+    document.getElementById('modalTitle').textContent = data.title;
+    document.getElementById('modalYear').textContent = data.year;
+    document.getElementById('modalDescription').textContent = data.description;
+    modal.style.display="flex";
+}
+
+function closeModal(){ document.getElementById('modal').style.display="none"; }
+
+window.onclick=function(event){
+    if(event.target===document.getElementById('modal')) closeModal();
+}
+</script>
+
+</body>
+</html>

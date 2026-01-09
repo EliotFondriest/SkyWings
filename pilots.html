@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pilotes célèbres, formations aéronautiques et vie à bord des avions.">
+    <title>Aviation Passion - Pilotes</title>
+
+    <style>
+        :root {
+            --main-color: #1ABC9C;
+            --dark-color: #148F77;
+            --bg-light: #E8F8F5;
+            --text-dark: #1C2833;
+            --text-light: #FFFFFF;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1ABC9C, #148F77);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        nav {
+            background-color: #0E6655;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--main-color);
+            border-radius: 6px;
+        }
+
+        section {
+            max-width: 1400px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 4px;
+            background: var(--main-color);
+            top: 0;
+            bottom: 0;
+            transform: translateX(-50%);
+        }
+
+        .event {
+            position: relative;
+            width: 50%;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .event:hover {
+            transform: translateY(-5px);
+        }
+
+        .event:nth-child(odd) {
+            left: 0;
+            margin-right: 50%;
+        }
+
+        .event:nth-child(even) {
+            left: 50%;
+            margin-left: 50%;
+        }
+
+        .event h3 {
+            color: var(--main-color);
+            margin-bottom: 10px;
+        }
+
+        .event p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+
+        .card img {
+            width: 100%;
+            display: block;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            padding: 15px 10px 5px 10px;
+            color: var(--dark-color);
+        }
+
+        .card p {
+            padding: 0 15px 15px 15px;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        footer {
+            background-color: #0E6655;
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 900px) {
+            .event:nth-child(odd), .event:nth-child(even) {
+                left: 0 !important;
+                margin: 0 0 0 0 !important;
+                width: 100%;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Pilotes et Formation</h1>
+    <p>Découvrez les pilotes célèbres, la formation nécessaire pour voler et la vie à bord des avions modernes et historiques.</p>
+</header>
+
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="gallery.html">Galerie</a>
+    <a href="history.html">Histoire</a>
+    <a href="info.html">Informations</a>
+	<a href="pilots.html">Pilotes</a>
+	<a href="airlines.html">Compagnies Aeriennes</a>
+	<a href="airports.html">Aeroports</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<section>
+    <h2>Histoire des pilotes célèbres</h2>
+    <div class="timeline">
+        <div class="event">
+            <h3>Amelia Earhart (1897-1937)</h3>
+            <p>Pionnière de l’aviation féminine, première femme à traverser l’Atlantique en solo en 1932. Symbole de courage et d’innovation.</p>
+        </div>
+        <div class="event">
+            <h3>Charles Lindbergh (1902-1974)</h3>
+            <p>Aviateur américain, célèbre pour son vol New York-Paris en 1927, premier vol transatlantique en solitaire sans escale.</p>
+        </div>
+        <div class="event">
+            <h3>Jean Mermoz (1901-1936)</h3>
+            <p>Pionnier français des lignes aériennes, notamment sur l’Atlantique Sud. Inspirant pour le développement du transport aérien international.</p>
+        </div>
+        <div class="event">
+            <h3>Éric “Willy” Elvinger (1905-1962)</h3>
+            <p>Pilote de chasse et instructeur, reconnu pour ses compétences exceptionnelles dans les manœuvres et l’entraînement des nouveaux pilotes.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Formation et licences aéronautiques</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="pilot_training.jpg" alt="Formation pilote">
+            <h3>PPL – Private Pilot License</h3>
+            <p>Licence de pilote privé, permet de voler pour le loisir. Formation de base incluant théorie, vol solo et navigation.</p>
+        </div>
+        <div class="card">
+            <img src="atpl.png" alt="Formation ATPL">
+            <h3>ATPL – Airline Transport Pilot License</h3>
+            <p>Licence professionnelle pour pilotes de ligne. Formation approfondie sur avion gros-porteur, gestion du cockpit et procédures internationales.</p>
+        </div>
+        <div class="card">
+            <img src="simulator.jpg" alt="Simulateur">
+            <h3>Simulateurs et entraînement</h3>
+            <p>Apprentissage sur simulateurs pour préparer les situations réelles et améliorer la sécurité et la réactivité du pilote.</p>
+        </div>
+        <div class="card">
+            <img src="cockpit.jpg" alt="Cockpit">
+            <h3>Vie à bord et cockpit</h3>
+            <p>Routine quotidienne des pilotes : briefing, check-lists, communication avec la tour, gestion de l’équipage et passagers.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Aviation Passion | Tous droits réservés</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Informations détaillées sur l’aviation : technologies, compagnies aériennes, sécurité, aérodynamique et innovations.">
+<title>Aviation Passion - Informations</title>
+<style>
+:root {
+    --main-color:#1ABC9C;
+    --dark-color:#148F77;
+    --bg-light:#E8F8F5;
+    --text-dark:#1C2833;
+    --text-light:#FFFFFF;
+}
+
+body{ font-family:Arial,sans-serif; margin:0; padding:0; background-color:var(--bg-light); color:var(--text-dark); line-height:1.8; scroll-behavior:smooth; }
+
+header{ background:linear-gradient(135deg,var(--main-color),var(--dark-color)); color:var(--text-light); padding:80px 20px; text-align:center; }
+header h1{ font-size:3.5rem; margin-bottom:20px; }
+header p{ font-size:1.3rem; max-width:1000px; margin:auto; }
+
+nav{ background-color:#0E6655; text-align:center; padding:15px 0; position:sticky; top:0; z-index:100; }
+nav a{ color:white; padding:15px 25px; text-decoration:none; font-weight:bold; display:inline-block; transition:0.3s; }
+nav a:hover{ background-color:var(--main-color); border-radius:6px; }
+
+section{ max-width:1400px; margin:auto; padding:60px 20px; }
+h2{ font-size:2.5rem; color:var(--dark-color); margin-bottom:30px; text-align:center; }
+h3{ color:var(--main-color); margin-top:40px; margin-bottom:20px; }
+p{ font-size:1.1rem; margin-bottom:20px; }
+
+.info-grid{ display:flex; flex-wrap:wrap; gap:30px; justify-content:center; margin-top:40px; }
+.info-card{ background:white; border-radius:15px; padding:20px; width:300px; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition:transform 0.3s ease; }
+.info-card:hover{ transform:translateY(-10px); box-shadow:0 15px 35px rgba(0,0,0,0.2); }
+.info-card img{ width:100%; border-radius:10px; margin-bottom:15px; }
+.info-card h4{ color:var(--main-color); margin-bottom:10px; }
+blockquote{ font-style:italic; background:rgba(0,0,0,0.05); padding:20px; border-left:5px solid var(--main-color); border-radius:10px; margin:30px 0; }
+
+footer{ background-color:#0E6655; color:white; text-align:center; padding:25px 0; margin-top:80px; }
+
+@media(max-width:800px){ .info-card{ width:100%; max-width:300px; } header h1{ font-size:2.5rem; } header p{ font-size:1rem; } }
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Informations sur l’Aviation</h1>
+<p>Découvrez en profondeur les technologies, compagnies, sécurité et innovations qui façonnent l’aviation moderne et future.</p>
+</header>
+
+<nav>
+<a href="index.html">Accueil</a>
+<a href="gallery.html">Galerie</a>
+<a href="history.html">Histoire</a>
+<a href="info.html">Informations</a>
+<a href="pilots.html">Pilotes</a>
+<a href="airlines.html">Compagnies Aeriennes</a>
+<a href="airports.html">Aeroports</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<section>
+<h2>Technologies Aéronautiques</h2>
+<div class="info-grid">
+    <div class="info-card">
+        <img src="engine.jpg" alt="Moteurs à turbine">
+        <h4>Moteurs à Turbine</h4>
+        <p>Les moteurs à réaction modernes permettent des vols rapides, efficaces et fiables. La technologie des turbofans réduit la consommation et le bruit.</p>
+    </div>
+    <div class="info-card">
+        <img src="avionique.jpg" alt="Avionique">
+        <h4>Avionique</h4>
+        <p>Les systèmes avioniques modernes incluent GPS, ILS, radar météo et pilotage automatique avancé pour garantir la sécurité et la précision des vols.</p>
+    </div>
+    <div class="info-card">
+        <img src="Composites.jpg" alt="Matériaux composites">
+        <h4>Matériaux Composites</h4>
+        <p>Les avions utilisent des composites légers pour améliorer la performance, réduire le poids et diminuer la consommation de carburant.</p>
+    </div>
+</div>
+
+<h2>Compagnies Aériennes et Avions Emblématiques</h2>
+<p>Les compagnies aériennes mondiales ont permis de connecter le globe et de développer des avions emblématiques comme l’A380, le Boeing 747 ou l’A350, qui combinent confort, efficacité et innovations technologiques.</p>
+
+<div class="info-grid">
+    <div class="info-card">
+        <img src="A380.jpg" alt="Airbus A380">
+        <h4>Airbus A380</h4>
+        <p>Le plus grand avion de passagers au monde, capable de transporter plus de 850 personnes et offrant confort et modernité à bord.</p>
+    </div>
+    <div class="info-card">
+        <img src="B747.jpg" alt="Boeing 747">
+        <h4>Boeing 747</h4>
+        <p>Icône de l’aviation commerciale, surnommé Jumbo Jet, connu pour sa longévité et sa capacité passagers.</p>
+    </div>
+    <div class="info-card">
+        <img src="A350.jpg" alt="Airbus A350">
+        <h4>Airbus A350</h4>
+        <p>Avion moderne long-courrier, haute efficacité énergétique, confort passagers et matériaux composites avancés.</p>
+    </div>
+</div>
+
+<h2>Sécurité et Réglementation</h2>
+<p>La sécurité aérienne repose sur des protocoles stricts : maintenance régulière, formation des pilotes, contrôle aérien et systèmes redondants. Les incidents sont extrêmement rares grâce aux standards mondiaux élevés.</p>
+
+<h2>Innovations et Futur de l’Aviation</h2>
+<div class="info-grid">
+    <div class="info-card">
+        <img src="supersonic.jpg" alt="Avion supersonique">
+        <h4>Vol Supersonique</h4>
+        <p>Les avions commerciaux supersoniques pourraient réduire le temps de vol intercontinental à quelques heures grâce à des vitesses supérieures à Mach 2.</p>
+    </div>
+    <div class="info-card">
+        <img src="drone.jpg" alt="Drones et taxis volants">
+        <h4>Drones & Taxis Volants</h4>
+        <p>Des drones de transport et taxis volants pourraient révolutionner la mobilité urbaine dans un futur proche.</p>
+    </div>
+    <div class="info-card">
+        <img src="Electric.jpg" alt="Avion électrique">
+        <h4>Avions Électriques</h4>
+        <p>L’électrification de l’aviation vise à réduire drastiquement les émissions et à rendre le transport aérien durable.</p>
+    </div>
+</div>
+
+<blockquote>"L’innovation continue dans l’aviation repousse les limites de la vitesse, de la sécurité et de l’efficacité énergétique." – Aviation Passion</blockquote>
+
+</section>
+
+<footer>
+<p>&copy; 2026 Aviation Passion | Tous droits réservés</p>
+</footer>
+
+</body>
+</html>

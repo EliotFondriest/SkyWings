@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Présentation des principales compagnies aériennes du monde, leurs flottes et destinations.">
+    <title>Aviation Passion - Compagnies aériennes</title>
+
+    <style>
+        :root {
+            --main-color: #1ABC9C;
+            --dark-color: #148F77;
+            --bg-light: #E8F8F5;
+            --text-dark: #1C2833;
+            --text-light: #FFFFFF;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1ABC9C, #148F77);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        nav {
+            background-color: #0E6655;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--main-color);
+            border-radius: 6px;
+        }
+
+        section {
+            max-width: 1400px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .airlines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .airline-card {
+            position: relative;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .airline-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+
+        .airline-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .airline-card h3 {
+            padding: 15px 10px 5px 10px;
+            color: var(--dark-color);
+        }
+
+        .airline-card p {
+            padding: 0 15px 15px 15px;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .airline-card .details {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 0.9rem;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .airline-card:hover .details {
+            opacity: 1;
+        }
+
+        footer {
+            background-color: #0E6655;
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 900px) {
+            .airline-card img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Compagnies aériennes célèbres</h1>
+    <p>Explorez les flottes, destinations et innovations des compagnies aériennes les plus emblématiques du monde.</p>
+</header>
+
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="gallery.html">Galerie</a>
+    <a href="history.html">Histoire</a>
+    <a href="info.html">Informations</a>
+	<a href="pilots.html">Pilotes</a>
+	<a href="airlines.html">Compagnies Aeriennes</a>
+	<a href="airports.html">Aeroports</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<section>
+    <h2>Nos compagnies aériennes sélectionnées</h2>
+
+    <div class="airlines-grid">
+
+        <div class="airline-card">
+            <img src="air_france.jpg" alt="Air France">
+            <h3>Air France</h3>
+            <p>Compagnie française emblématique, fondée en 1933, avec une flotte moderne et des destinations mondiales.</p>
+            <div class="details">
+                Flotte : Airbus A350, A380, Boeing 777, 787<br>
+                Destinations : 200+ villes dans le monde<br>
+                Hub principal : Paris-Charles de Gaulle
+            </div>
+        </div>
+
+        <div class="airline-card">
+            <img src="emirates.png" alt="Emirates">
+            <h3>Emirates</h3>
+            <p>Compagnie basée à Dubaï, connue pour ses services luxueux et sa flotte d’A380 et Boeing 777.</p>
+            <div class="details">
+                Flotte : A380, Boeing 777<br>
+                Destinations : 150+ villes<br>
+                Hub principal : Dubaï International
+            </div>
+        </div>
+
+        <div class="airline-card">
+            <img src="lufthansa.png" alt="Lufthansa">
+            <h3>Lufthansa</h3>
+            <p>Compagnie allemande fondée en 1926, pionnière dans les vols long-courriers et l’innovation technologique.</p>
+            <div class="details">
+                Flotte : Airbus A350, A380, Boeing 747<br>
+                Destinations : 200+ villes<br>
+                Hub principal : Francfort
+            </div>
+        </div>
+
+        <div class="airline-card">
+            <img src="qatar_airways.png" alt="Qatar Airways">
+            <h3>Qatar Airways</h3>
+            <p>Compagnie du Moyen-Orient, reconnue pour son service premium et sa flotte ultra-moderne.</p>
+            <div class="details">
+                Flotte : Airbus A350, Boeing 777, 787<br>
+                Destinations : 150+ villes<br>
+                Hub principal : Doha
+            </div>
+        </div>
+
+        <div class="airline-card">
+            <img src="singapore_airlines.png" alt="Singapore Airlines">
+            <h3>Singapore Airlines</h3>
+            <p>Compagnie asiatique célèbre pour son confort, son service exceptionnel et ses innovations technologiques.</p>
+            <div class="details">
+                Flotte : A350, A380, Boeing 787<br>
+                Destinations : 130+ villes<br>
+                Hub principal : Singapour Changi
+            </div>
+        </div>
+
+        <div class="airline-card">
+            <img src="british_airways.png" alt="British Airways">
+            <h3>British Airways</h3>
+            <p>Compagnie du Royaume-Uni fondée en 1974, réputée pour ses vols long-courriers et sa flotte moderne.</p>
+            <div class="details">
+                Flotte : Airbus A350, A380, Boeing 777<br>
+                Destinations : 180+ villes<br>
+                Hub principal : Londres Heathrow
+            </div>
+        </div>
+
+        <div class="airline-card">
+            <img src="delta_air_lines.png" alt="Delta Air Lines">
+            <h3>Delta Air Lines</h3>
+            <p>Compagnie américaine, l’une des plus grandes au monde, avec une flotte diversifiée et un réseau étendu.</p>
+            <div class="details">
+                Flotte : Boeing 737, 757, 767, 777<br>
+                Destinations : 300+ villes<br>
+                Hub principal : Atlanta
+            </div>
+        </div>
+
+        <div class="airline-card">
+            <img src="qantas.png" alt="Qantas">
+            <h3>Qantas</h3>
+            <p>Compagnie australienne historique, connue pour sa sécurité et ses vols long-courriers vers tous les continents.</p>
+            <div class="details">
+                Flotte : Boeing 787, A380<br>
+                Destinations : 85+ villes<br>
+                Hub principal : Sydney
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Aviation Passion | Tous droits réservés</p>
+</footer>
+
+</body>
+</html>

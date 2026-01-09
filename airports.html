@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Présentation des principaux aéroports du monde, leurs infrastructures et statistiques de trafic.">
+    <title>Aviation Passion - Aéroports</title>
+
+    <style>
+        :root {
+            --main-color: #1ABC9C;
+            --dark-color: #148F77;
+            --bg-light: #E8F8F5;
+            --text-dark: #1C2833;
+            --text-light: #FFFFFF;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1ABC9C, #148F77);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        nav {
+            background-color: #0E6655;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--main-color);
+            border-radius: 6px;
+        }
+
+        section {
+            max-width: 1400px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .airport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .airport-card {
+            position: relative;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .airport-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+
+        .airport-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .airport-card h3 {
+            padding: 15px 10px 5px 10px;
+            color: var(--dark-color);
+        }
+
+        .airport-card p {
+            padding: 0 15px 15px 15px;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .airport-card .details {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 0.9rem;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .airport-card:hover .details {
+            opacity: 1;
+        }
+
+        footer {
+            background-color: #0E6655;
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 900px) {
+            .airport-card img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Les Aéroports du Monde</h1>
+    <p>Découvrez les infrastructures, les statistiques et les particularités des plus grands aéroports internationaux.</p>
+</header>
+
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="gallery.html">Galerie</a>
+    <a href="history.html">Histoire</a>
+    <a href="info.html">Informations</a>
+	<a href="pilots.html">Pilotes</a>
+	<a href="airlines.html">Compagnies Aeriennes</a>
+	<a href="airports.html">Aeroports</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<section>
+    <h2>Nos aéroports emblématiques</h2>
+
+    <div class="airport-grid">
+
+        <div class="airport-card">
+            <img src="cdg.jpg" alt="Aéroport Paris-Charles de Gaulle">
+            <h3>Paris-Charles de Gaulle</h3>
+            <p>Aéroport principal de la France et hub d’Air France, immense terminal et trafic international élevé.</p>
+            <div class="details">
+                Trafic annuel : 76 millions de passagers<br>
+                Terminaux : 3 principaux<br>
+                Pistes : 4<br>
+                Particularité : Hub pour l'Europe et vols long-courriers
+            </div>
+        </div>
+
+        <div class="airport-card">
+            <img src="dubai.jpg" alt="Aéroport Dubaï International">
+            <h3>Dubaï International</h3>
+            <p>Hub mondial majeur, connu pour ses terminaux luxueux et son flux énorme de passagers internationaux.</p>
+            <div class="details">
+                Trafic annuel : 88 millions de passagers<br>
+                Terminaux : 3 principaux<br>
+                Pistes : 2<br>
+                Particularité : Centre pour Emirates et vols premium
+            </div>
+        </div>
+
+        <div class="airport-card">
+            <img src="heathrow.jpg" alt="Aéroport Londres Heathrow">
+            <h3>Londres Heathrow</h3>
+            <p>Le plus grand aéroport du Royaume-Uni, base de British Airways, connexion majeure avec l’Amérique et l’Asie.</p>
+            <div class="details">
+                Trafic annuel : 80 millions de passagers<br>
+                Terminaux : 5 principaux<br>
+                Pistes : 2<br>
+                Particularité : L’un des plus fréquentés au monde
+            </div>
+        </div>
+
+        <div class="airport-card">
+            <img src="hartsfield.jpg" alt="Aéroport Atlanta Hartsfield-Jackson">
+            <h3>Atlanta Hartsfield-Jackson</h3>
+            <p>Aéroport américain extrêmement actif, hub de Delta Airlines et principal aéroport pour vols domestiques.</p>
+            <div class="details">
+                Trafic annuel : 110 millions de passagers<br>
+                Terminaux : 2 principaux<br>
+                Pistes : 5<br>
+                Particularité : Très efficace pour les correspondances internes
+            </div>
+        </div>
+
+        <div class="airport-card">
+            <img src="singapore.jpg" alt="Aéroport Changi Singapoure">
+            <h3>Singapoure Changi</h3>
+            <p>Réputé pour sa modernité, son confort et ses attractions innovantes pour les passagers en transit.</p>
+            <div class="details">
+                Trafic annuel : 68 millions de passagers<br>
+                Terminaux : 4 principaux<br>
+                Pistes : 3<br>
+                Particularité : Meilleur aéroport du monde selon plusieurs classements
+            </div>
+        </div>
+
+        <div class="airport-card">
+            <img src="tokyo.jpg" alt="Aéroport Tokyo Haneda">
+            <h3>Tokyo Haneda</h3>
+            <p>Aéroport japonais majeur, excellente ponctualité et hub pour vols domestiques et internationaux.</p>
+            <div class="details">
+                Trafic annuel : 87 millions de passagers<br>
+                Terminaux : 3 principaux<br>
+                Pistes : 4<br>
+                Particularité : Connexions rapides vers Asie et USA
+            </div>
+        </div>
+
+        <div class="airport-card">
+            <img src="los_angeles.jpg" alt="Aéroport Los Angeles">
+            <h3>Los Angeles International</h3>
+            <p>Principal aéroport de la côte ouest américaine, hub pour vols vers Asie et Amérique latine.</p>
+            <div class="details">
+                Trafic annuel : 88 millions de passagers<br>
+                Terminaux : 9 principaux<br>
+                Pistes : 4<br>
+                Particularité : Forte activité de vols internationaux
+            </div>
+        </div>
+
+        <div class="airport-card">
+            <img src="frankfurt.jpg" alt="Aéroport Francfort">
+            <h3>Francfort</h3>
+            <p>Grand hub européen, base de Lufthansa, très actif pour le fret et le transport passagers.</p>
+            <div class="details">
+                Trafic annuel : 70 millions de passagers<br>
+                Terminaux : 2 principaux<br>
+                Pistes : 4<br>
+                Particularité : Centre pour vols intercontinentaux
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Aviation Passion | Tous droits réservés</p>
+</footer>
+
+</body>
+</html>

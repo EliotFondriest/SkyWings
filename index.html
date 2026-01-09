@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Page d'accueil ultra-détaillée d'Aviation Passion avec sections sur l'histoire, les avions modernes et futurs, innovations et liens vers la galerie.">
+<title>Aviation Passion - Accueil</title>
+<style>
+:root {
+    --main-color:#1ABC9C;
+    --dark-color:#148F77;
+    --bg-light:#E8F8F5;
+    --text-dark:#1C2833;
+    --text-light:#FFFFFF;
+}
+
+body{ font-family:Arial,sans-serif; margin:0; padding:0; background-color:var(--bg-light); color:var(--text-dark); line-height:1.7; scroll-behavior:smooth; }
+header{ background:linear-gradient(135deg,var(--main-color),var(--dark-color)); color:var(--text-light); padding:100px 20px; text-align:center; }
+header h1{ font-size:4rem; margin-bottom:20px; }
+header p{ font-size:1.5rem; max-width:1000px; margin:auto; }
+
+nav{ background-color:#0E6655; text-align:center; padding:20px 0; position:sticky; top:0; z-index:100; }
+nav a{ color:white; padding:15px 30px; text-decoration:none; font-weight:bold; display:inline-block; transition:0.3s; }
+nav a:hover{ background-color:var(--main-color); border-radius:6px; }
+
+section{ max-width:1400px; margin:auto; padding:80px 20px; }
+section h2{ font-size:3rem; color:var(--dark-color); margin-bottom:40px; text-align:center; }
+section h3{ font-size:2rem; color:var(--main-color); margin-top:50px; }
+section p, section li{ font-size:1.2rem; line-height:1.9; }
+
+ul{ list-style-type:disc; margin-left:30px; }
+
+.cards { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; margin-top:40px; }
+.card { background:white; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.15); width:300px; padding:20px; transition:0.3s; cursor:pointer; }
+.card:hover{ transform:translateY(-10px); box-shadow:0 20px 40px rgba(0,0,0,0.25); }
+
+.card img{ width:100%; border-radius:10px; margin-bottom:15px; }
+
+.card h4{ font-size:1.4rem; margin-bottom:10px; color:var(--dark-color); }
+.card p{ font-size:1rem; color:#555; }
+
+footer{ background-color:#0E6655; color:white; text-align:center; padding:40px 0; margin-top:80px; }
+
+@media(max-width:768px){ header h1{ font-size:3rem; } header p{ font-size:1.2rem; } .cards{ flex-direction:column; align-items:center; } }
+</style>
+</head>
+<body>
+
+<header>
+<h1>Aviation Passion</h1>
+<p>Bienvenue dans l’univers fascinant de l’aviation. Découvrez l’histoire, les avions emblématiques, les innovations et l’avenir des voyages aériens à travers nos articles détaillés et nos galeries interactives.</p>
+</header>
+
+<nav>
+<a href="index.html">Accueil</a>
+<a href="gallery.html">Galerie</a>
+<a href="history.html">Histoire</a>
+<a href="info.html">Informations</a>
+<a href="pilots.html">Pilotes</a>
+<a href="airlines.html">Compagnies Aeriennes</a>
+<a href="airports.html">Aeroports</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<section id="intro">
+<h2>Introduction à l'Aviation</h2>
+<p>L’aviation a transformé notre monde, permettant de relier continents et cultures. Des premiers planeurs aux avions supersoniques, chaque étape représente un bond technologique et humain. Cette section vous plongera dans les fondations de l’aviation moderne.</p>
+
+<h3>Pourquoi l'aviation fascine-t-elle ?</h3>
+<p>L’aviation n’est pas seulement un moyen de transport, elle est une prouesse technologique et un symbole de liberté. Elle relie les hommes tout en repoussant les limites de l’ingénierie et de l’aérodynamique. Les avions modernes permettent de parcourir des milliers de kilomètres en quelques heures, avec confort et sécurité.</p>
+
+<h3>Les grandes familles d’avions</h3>
+<ul>
+<li><b>Avions civils :</b> Des long-courriers comme le Boeing 777X ou l’Airbus A350 aux petits jets régionaux.</li>
+<li><b>Avions militaires :</b> Chasseurs furtifs, bombardiers stratégiques et drones avancés.</li>
+<li><b>Avions historiques :</b> Concorde, Spitfire, DC-3 et autres qui ont marqué leur époque.</li>
+<li><b>Innovations futuristes :</b> Avions électriques, supersoniques et taxis volants urbains.</li>
+</ul>
+</section>
+
+<section id="gallery-preview">
+<h2>Découvrez notre Galerie</h2>
+<p>Explorez des centaines d’images d’avions, de l’histoire à la modernité. Cliquez sur les images pour des informations détaillées sur chaque modèle.</p>
+
+<div class="cards">
+<div class="card" onclick="location.href='gallery.html#A350';">
+<img src="A350.jpg" alt="Airbus A350">
+<h4>Airbus A350</h4>
+<p>Un long-courrier moderne combinant confort, efficacité énergétique et technologies avancées.</p>
+</div>
+
+<div class="card" onclick="location.href='gallery.html#B777X';">
+<img src="B777X.jpg" alt="Boeing 777X">
+<h4>Boeing 777X</h4>
+<p>Nouvelle génération du 777 avec moteurs GE9X ultra efficaces et ailettes repliables.</p>
+</div>
+
+<div class="card" onclick="location.href='gallery.html#Concorde';">
+<img src="Concorde.jpg" alt="Concorde">
+<h4>Concorde</h4>
+<p>L’icône supersonique des années 70, reliant Paris et New York en un temps record.</p>
+</div>
+
+<div class="card" onclick="location.href='gallery.html#F35';">
+<img src="F35.jpg" alt="F-35 Lightning II">
+<h4>F-35 Lightning II</h4>
+<p>Avion de combat furtif, haute technologie et manœuvrabilité exceptionnelle.</p>
+</div>
+
+<div class="card" onclick="location.href='gallery.html#An225';">
+<img src="An225.jpg" alt="Antonov An-225">
+<h4>Antonov An-225</h4>
+<p>Le plus grand avion cargo du monde, capable de transporter des charges gigantesques.</p>
+</div>
+</div>
+
+</section>
+
+<section id="history-preview">
+<h2>L'Histoire de l'Aviation</h2>
+<p>De Kitty Hawk aux avions supersoniques modernes, chaque décennie a apporté des innovations révolutionnaires. Découvrez nos articles détaillés et illustrations de chaque période.</p>
+
+<div class="cards">
+<div class="card" onclick="location.href='history.html#debuts';">
+<img src="WrightBrothers.jpg" alt="Frères Wright">
+<h4>Les débuts</h4>
+<p>Les premiers vols motorisés et les inventions précurseures qui ont permis l’aviation moderne.</p>
+</div>
+
+<div class="card" onclick="location.href='history.html#ww1';">
+<img src="WW1plane.jpg" alt="Avions Première Guerre Mondiale">
+<h4>La Première Guerre mondiale</h4>
+<p>Les premiers avions militaires et la rapidité des innovations techniques de l’époque.</p>
+</div>
+
+<div class="card" onclick="location.href='history.html#concorde';">
+<img src="Concorde.jpg" alt="Concorde">
+<h4>Les avions emblématiques</h4>
+<p>Le Concorde, le Spitfire et d’autres modèles historiques qui ont marqué l’histoire.</p>
+</div>
+</div>
+
+</section>
+
+<section id="future">
+<h2>L’Avenir de l’Aviation</h2>
+<p>L’aviation se dirige vers un futur plus propre et plus rapide, avec des avions électriques, hybrides et supersoniques, et des drones urbains révolutionnant la mobilité en ville.</p>
+
+<ul>
+<li><b>Avions électriques :</b> Réduction des émissions et consommation énergétique minimale.</li>
+<li><b>Jets supersoniques :</b> Retour du transport supersonique commercial pour relier les continents rapidement.</li>
+<li><b>Taxis volants :</b> Mobilité urbaine innovante avec véhicules volants autonomes.</li>
+<li><b>Technologies IA :</b> Assistance automatisée pour pilotes et navigation intelligente.</li>
+</ul>
+</section>
+
+<footer>
+<p>&copy; 2026 Aviation Passion | Tous droits réservés</p>
+</footer>
+</body>
+</html>
